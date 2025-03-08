@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #2c3e50, #3498db);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .contact-container {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 300px;
+    }
+
+    .contact-container h2 {
+        margin-bottom: 15px;
+        color: #333;
+    }
+
+    form input,
+    form button {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    form button {
+        background-color: #3498db;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    form button:hover {
+        background-color: #2980b9;
+    }
+
+    .input1,
+    .input2,
+    .input3 {
+        width: 282px;
+    }
+</style>
+
+<body>
+    <div class="contact-container">
+        <h2>Contact Me</h2>
+        <form id="contactForm">
+            <input class="input1" type="text" id="name" placeholder="Enter Name" required>
+            <input class="input2" type="email" id="email" placeholder="Enter Email" required>
+            <input class="input3" type="text" id="contact" placeholder="Enter Contact Number" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+<!-- <script>
+    document.getElementById("contactForm").addEventListener("submit", function (event) {
+        event.preventDefault(); // Page reload na ho
+
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let contact = document.getElementById("contact").value;
+
+        if (name && email && contact) {
+            let formData = {
+                name: name,
+                email: email,
+                contact: contact
+            };
+
+            localStorage.setItem("contactData", JSON.stringify(formData));
+            alert("Form submitted successfully! ✅");
+
+            // Optional: Form clear karna
+            document.getElementById("contactForm").reset();
+        } else {
+            alert("Please fill all fields! ⚠️");
+        }
+    });
+</script> -->
+<script>
+    document.getElementById("contactForm").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent page reload
+
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let contact = document.getElementById("contact").value;
+
+        if (name && email && contact) {
+            let formData = {
+                name: name,
+                email: email,
+                contact: contact
+            };
+
+            // Get existing data from localStorage
+            let existingData = JSON.parse(localStorage.getItem("contactData")) || [];
+
+            // Add new entry to the array
+            existingData.push(formData);
+
+            // Save back to localStorage
+            localStorage.setItem("contactData", JSON.stringify(existingData));
+
+            // Show all stored data in the console
+            console.log("All Contacts:", existingData);
+
+            alert("Form submitted successfully! ✅");
+
+            // Optional: Clear form fields
+            document.getElementById("contactForm").reset();
+        } else {
+            alert("Please fill all fields! ⚠️");
+        }
+    });
+</script>
+
+
+</html>

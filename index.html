@@ -1,0 +1,394 @@
+<!-- here we gonna create our personal protfolio right  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <script src="index.js"></script>
+    <title>Nishant Protfolio</title>
+</head>
+<style>
+    /* first thing is always remove the unwanted padding and margin from the page  */
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    body {
+        background-color: darkblue;
+        color: white;
+        /* text color on page */
+        font-family: "Poppins", serif;
+    }
+
+    /* now next step is see we have here three things nav , ul of nav and li of ul of nav right so we customize them  */
+    nav {
+        display: flex;
+        justify-content: space-around;
+        background-color: #1b1b85;
+        height: 72px;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: center;
+        margin: 16px 3px;
+
+    }
+
+    nav ul li {
+        list-style: none;
+        margin: 8px 23px;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: white;
+
+    }
+
+    nav ul li a:hover {
+        color: rgb(153, 153, 226);
+        font-size: 1.01rem;
+    }
+
+    .left {
+        font-size: 1.5rem;
+        /* increse the size of the font */
+        margin: 16px 3px;
+    }
+
+    .firstsection {
+        display: flex;
+        justify-content: space-around;
+        /*this is very commonly used in style sheet  */
+        margin: 149px 0px;
+    }
+
+    .firstsection>div {
+        width: 30%;
+    }
+
+    .leftsection {
+        /* background-color: red; */
+        font-size: 2.5rem;
+        /* margin: 3px 4px; */
+
+
+    }
+
+    .rightsection img {
+        /* border: 2px solid black; */
+        width: 90%;
+        margin: 4px 23px;
+        mix-blend-mode: color-burn;
+
+    }
+
+    .purple {
+        color: #9561c5;
+
+    }
+
+    #element {
+        color: #9561c5;
+
+    }
+
+    .secondsection {
+        max-width: 80vw;
+        margin: auto;
+        height: 107vh;
+        /* border: 2px solid black; */
+    }
+
+    main hr {
+        border: 0px;
+        height: 2.1px;
+        background-color: rgb(23 23 189);
+        font-family: "Poppins", serif;
+        margin: 40px 80px;
+    }
+
+    .textgray {
+        color: gray;
+    }
+
+    .secondsection .box {
+        background: white;
+        width: 80vw;
+        height: 2px;
+        margin: 56px 0;
+        display: flex;
+
+    }
+
+    .secondsection .vertical {
+        height: 93px;
+        background-color: white;
+        width: 1px;
+        margin: 0 100px;
+    }
+
+    .imageofvertical {
+        top: -40px;
+        position: relative;
+        height: 30px;
+        width: 28px;
+        left: -13px;
+    }
+
+    .vertical-text {
+        /* border: 2px solid red; */
+        position: relative;
+        top: 70px;
+        width: 173px;
+    }
+
+    .vertical-desc {
+        color: grey;
+        /* border: 2px solid red; */
+        position: relative;
+        top: 87px;
+        width: 173px;
+    }
+
+    /* footer {
+        height: 350px;
+        border: 2px solid red;
+    } */
+    footer {
+        background-color: #1b1b85;
+        color: white;
+        padding: 40px 0;
+        text-align: center;
+    }
+
+    .footer-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        max-width: 80vw;
+        margin: auto;
+    }
+
+    .footer-section {
+        width: 22%;
+        min-width: 200px;
+    }
+
+    .footer-section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 12px;
+    }
+
+    .footer-section p,
+    .footer-section ul {
+        font-size: 0.9rem;
+        color: #d3d3d3;
+    }
+
+    .footer-section ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-section ul li {
+        margin: 5px 0;
+    }
+
+    .footer-section ul li a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .footer-section ul li a:hover {
+        color: rgb(153, 153, 226);
+    }
+
+    .footer-section img {
+        width: 28px;
+        margin: 5px;
+        transition: transform 0.3s;
+    }
+
+    .footer-section img:hover {
+        transform: scale(1.2);
+    }
+
+    .footer-bottom {
+        background-color: #141463;
+        padding: 10px 0;
+        font-size: 0.8rem;
+        position: relative;
+        top: 43px;
+        color: #aaa;
+        margin-top: 20px;
+    }
+</style>
+
+<body>
+    <!-- lets create first header so that we set the things at the head of the page right  -->
+    <header>
+        <nav>
+            <!-- in under nav bar  one is left section for logo of protfolio and right is the main content like home about services etc -->
+            <div class="left">Nishant's Protfolio</div> <!--left seciont -->
+            <div class="right"> <!-- right section contains ul -> li elements -->
+                <ul>
+                    <li><a href="">Home </a></li>
+                    <li><a href="">About </a></li>
+                    <li><a href="">Services </a></li>
+                    <li><a href="">Projects </a></li>
+                    <li><a href="contact.html">Contact Me </a> </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- now we gonna create our first section so let see -->
+    <main>
+        <section class="firstsection">
+            <div class="leftsection">
+                hi my name is <span class="purple">Nishant</span>
+                <div> And i am a passionate </div>
+                <div>Web Developer</div>
+                <!-- the below link we copy from the typejs repositerry on google of gihub link  -->
+                <span id="element"></span>
+            </div>
+            <div class="rightsection">
+                <img src="png1.jpg" alt="">
+        </section>
+        <hr>
+        <!-- here we start our second section of the past experience -->
+
+        <section class="secondsection">
+            <span class="textgray">What i have done so far</span>
+            <h1>Past Experience</h1>
+            <div class="box">
+                <div class="vertical">
+                    <img class="imageofvertical" src="verticalimage.webp" alt="">
+                    <div class="vertical-text">HTML Developer (2010-2012)</div>
+                    <div class="vertical-desc">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit quaerat itaque, libero quibusdam
+                        rem voluptate praesentium qui ut veniam aperiam.
+                    </div>
+                </div>
+
+                <div class="vertical">
+                    <img class="imageofvertical" src="verticalimage.webp" alt="">
+                    <div class="vertical-text">HTML Editor (2011-2022)</div>
+                    <div class="vertical-desc">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. At facere tenetur error quibusdam
+                        iusto nihil omnis architecto quisquam cum fugit?
+                    </div>
+                </div>
+
+                <div class="vertical">
+                    <img class="imageofvertical" src="verticalimage.webp" alt="">
+                    <div class="vertical-text">HTML Editor (2011-2022)</div>
+                    <div class="vertical-desc">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. At facere tenetur error quibusdam
+                        iusto nihil omnis architecto quisquam cum fugit?
+                    </div>
+                </div>
+
+                <div class="vertical">
+                    <img class="imageofvertical" src="verticalimage.webp" alt="">
+                    <div class="vertical-text">HTML Editor (2011-2022)</div>
+                    <div class="vertical-desc">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. At facere tenetur error quibusdam
+                        iusto nihil omnis architecto quisquam cum fugit?
+                    </div>
+                </div>
+
+                <div class="vertical">
+                    <img class="imageofvertical" src="verticalimage.webp" alt="">
+                    <div class="vertical-text">HTML Editor (2011-2022)</div>
+                    <div class="vertical-desc">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. At facere tenetur error quibusdam
+                        iusto nihil omnis architecto quisquam cum fugit?
+                    </div>
+                </div>
+
+                <div class="vertical">
+                    <img class="imageofvertical" src="verticalimage.webp" alt="">
+                    <div class="vertical-text">HTML Editor (2011-2022)</div>
+                    <div class="vertical-desc">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. At facere tenetur error quibusdam
+                        iusto nihil omnis architecto quisquam cum fugit?
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h2>About Me</h2>
+                <p>Passionate Web Developer skilled in modern frontend and backend technologies. Exploring cybersecurity
+                    and AI.</p>
+            </div>
+            <div class="footer-section links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="http://127.0.0.1:5500/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h2><a href="contact.html"></a>Contact Info</h2>
+                <p>Email: <a href="mailto:nishant@example.com">nishant@example.com</a></p>
+                <p>Phone: +91 XXXXXXXXXX</p>
+            </div>
+            <div class="footer-section social">
+                <h2>Follow Me</h2>
+                <a href="#"><img src="github.svg" alt="GitHub"></a>
+                <a href="#"><img src="linkedin.svg" alt="LinkedIn"></a>
+                <a href="#"><img src="twitter.svg" alt="Twitter"></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Nishant Bansal | All Rights Reserved
+        </div>
+    </footer>
+
+    <!-- the below links we copy from the typejs repositerry on google of gihub link  -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Web Developer.', 'Contanierization specialist', 'Video Editor', "Good Problem Solver"],
+            typeSpeed: 50,
+        });
+        document.getElementById("contactForm").addEventListener("submit", async (event) => {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            const response = await fetch("http://localhost:5000/register", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ name, email, password }),
+            });
+
+            const data = await response.json();
+            alert(data.message);
+        });
+
+    </script>
+
+</body>
+
+</html>
